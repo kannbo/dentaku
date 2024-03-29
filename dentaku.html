@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スーパーlauncher</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div id="main">
+      <h1 id="text">電卓</h1>
+      <span id="siki"></span>
+    </div>
+    <app_area>
+        <button onclick="addF('/')">　　　　    ÷  　　　　</button>
+        <button onclick="CLEAR()">C</button>
+    </app_area>
+    <app_area>
+        <button onclick="addF('1')">1</button>
+        <button onclick="addF('2')">2</button>
+        <button onclick="addF('3')">3</button>
+        <button onclick="addF('+')">+</button>
+    </app_area>
+    <app_area>
+        <button onclick="addF('4')">4</button>
+        <button onclick="addF('5')">5</button>
+        <button onclick="addF('6')">6</button>
+        <button onclick="addF('-')">-</button>
+    </app_area>
+    <app_area>
+        <button onclick="addF('7')">7</button>
+        <button onclick="addF('8')">8</button>
+        <button onclick="addF('9')">9</button>
+        <button onclick="addF('*')">×</button>
+    </app_area>
+    <app_area>
+        <button onclick="addF('0')">0</button>
+        <button onclick="addF('.')">.</button>
+        <button onclick="NONEF()">AC</button>
+        <button onclick="Yess()">=</button>
+    </app_area>
+    <script>
+text=""
+function addF(x){
+  text=text+x
+  document.getElementById("text").textContent=text.split('/').join('÷').split('*').join('×')
+  document.getElementById("siki").textContent=""
+}
+function NONEF(){
+  text=""
+  document.getElementById("siki").textContent=""
+  document.getElementById("text").textContent="　"
+}
+function Yess(){
+  document.getElementById("siki").textContent="("+text+")"
+  try{
+    aaa=new Function("return "+text)
+    document.getElementById("text").textContent=aaa()
+  } catch(e){
+    document.getElementById("text").textContent="error"
+  }
+}
+function CLEAR(){
+  document.getElementById("siki").textContent=""
+  try{
+    text=text.substring(0, text.length - 1);
+    if (text.length!=0){
+      document.getElementById("text").textContent=text
+    } else{
+      document.getElementById("text").textContent="　"
+    }
+  }catch(e){
+    document.getElementById("text").textContent="error"
+  }
+}
+</script>
+</body>
+</html>

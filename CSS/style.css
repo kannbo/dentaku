@@ -1,0 +1,33 @@
+body{
+  font-size: 30px;
+  font-family:"Yu Gothic";
+}
+app_area{
+  display: flex;
+}
+button{
+  background: #76a2f9;
+  border: 5px solid;
+  align-items: center;
+  border-radius:15px;
+  border-color:#76a2f9;
+  padding: 15px 20px;
+  margin: 10px 10px;
+  display: block;
+  transition: all 0.2s ease; 
+  color: black;
+}
+button:hover{
+  opacity: .99;
+  background: #2667e8;
+  border-color:#2667e8;
+  color: white;
+}
+span{
+  font-size: 3.5px;
+  color:#dddddd;
+}
+#main{
+  display:flex;
+  flex-grow: 1;
+}
